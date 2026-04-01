@@ -279,7 +279,13 @@
             color: #666;
             font-size: 14px;
             line-height: 1.8;
-            animation: scrollUp 25s linear infinite;
+            /* Increased time slightly since it's traveling a shorter total distance now */
+            animation: scrollUp 40s linear infinite;
+        }
+
+        /* Pauses the scrolling so people can read the names easily */
+        .terminal-window:hover .marquee-content {
+            animation-play-state: paused;
         }
 
         .loser-row {
@@ -311,7 +317,7 @@
         }
 
         @keyframes scrollUp {
-            0% { transform: translateY(100%); }
+            0% { transform: translateY(0); } /* Changed from 100% to 0 so it appears instantly */
             100% { transform: translateY(-100%); }
         }
 
